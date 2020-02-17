@@ -3,6 +3,13 @@
         private $db;
 
         public function __construct() {
-            $db = new Database;
+            $this->db = new Database;
         }
+
+        // Get Posts
+        public function getPosts() {
+            $this->db->query('SELECT * FROM posts');
+
+            return $this->db->resultSet();
+        } 
     }
